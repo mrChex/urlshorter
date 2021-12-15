@@ -1,0 +1,33 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+}
+
+.input {
+  margin-right: 8px;
+  padding: 8px;
+  border: 2px solid #efefef;
+  border-radius: 4px;
+  width: 300px;
+  font-size: 14pt;
+}
+
+.btn {
+  border: 2px solid #efefef;
+  border-radius: 4px;
+  background-color: #fafafa;
+  cursor: pointer;
+  font-size: 12pt;
+}
+
+.result {
+  margin-top: 8px;
+  height: 40px;
+}

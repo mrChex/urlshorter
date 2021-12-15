@@ -1,3 +1,4 @@
 .idea
 backend/backend
 node_modules
+frontend/.next
