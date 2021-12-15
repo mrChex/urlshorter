@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-const BACKEND_URL = "http://127.0.0.1:8080"
+const BACKEND_URL = process.env.BACKEND_URL??"http://127.0.0.1:8080";
 
 export async function getUrlByHash(hash: string) {
     const getResponse = await fetch(`${BACKEND_URL}/url?hash=${encodeURIComponent(hash)}`);

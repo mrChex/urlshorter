@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/mrChex/urlshorter/backend/handlers"
 	"github.com/mrChex/urlshorter/backend/storage"
@@ -10,7 +11,7 @@ import (
 
 func main() {
 	// config
-	dbURL := "postgres://shorter:shorterpwd@localhost:5432/shorter"
+	dbURL := os.Getenv("POSTGRES_URL")
 
 	store, err := storage.NewPostgresql(dbURL)
 	if err != nil {
@@ -32,8 +33,8 @@ func main() {
 		}
 	})
 
-	log.Println("Starting at localhost:8080")
-	err = http.ListenAndServe("localhost:8080", nil)
+	log.Println("Starting at :8080")
+	err = http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatalf("Unable to start web server: %v", err)
 	}
